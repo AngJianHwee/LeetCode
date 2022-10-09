@@ -18,7 +18,7 @@ class Solution:
         return a,b
                 
 s = Solution()
-print(s.findErrorNums([1,2,2,4]))
+# print(s.findErrorNums([1,2,2,4]))
 
 
 # # Model Solution
@@ -27,3 +27,9 @@ print(s.findErrorNums([1,2,2,4]))
 # Suppose we change 'a' to 'b', then all but 'a' and 'b' are XORed exactly 2 times. The result is then
 # 0 ^ a ^ b ^ b ^ b = a ^ b
 # Let c = a ^ b, if we can find 'b' which appears 2 times in the original array, 'a' can be easily calculated by a = c ^ b.
+
+
+# import time
+# for i in range(5):
+#     print(i,end = "\r")
+#     time.sleep(1)
