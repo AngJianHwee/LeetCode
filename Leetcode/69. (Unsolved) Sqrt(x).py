@@ -3,36 +3,26 @@ from typing import List
 
 class Solution:
     def mySqrt(self, x: int) -> int:
-        if x == 0:
+        if x <= 0:
             return 0
-        if x < 4:
-            return 1
-        if 4<=x<9:
-            return 2
-        upper = x
+        upper = x+1
         lower = 1
-        while (upper - lower)>0.5:
-            if upper**2 <x:
-                break
-            if lower**2 >x:
-                break
-            
-            middle = (upper + lower)/2
-            if (middle**2)<x:
-                lower = middle
-            else:
+        while (upper - lower)>1e-5:
+            # print(lower, upper)
+            middle = lower + (upper - lower)/2
+            if middle**2 > x:
                 upper = middle
+            else:
+                lower = middle
         return int(upper)
 
 
+
 s = Solution()
-# print(s.mySqrt(4))
 print(s.mySqrt(9))
 print(s.mySqrt(10))
-print(s.mySqrt(16))
-print(s.mySqrt(81))
-print(s.mySqrt(100))
-print(s.mySqrt(2147395599), 2147395599**(0.5))
+print(s.mySqrt(2147395599))
+
 
 
 # # Model Solution
@@ -47,5 +37,3 @@ print(s.mySqrt(2147395599), 2147395599**(0.5))
 # for i in range(5):
 #     print(i,end = "\r")
 #     time.sleep(1)
-
-
