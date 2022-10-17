@@ -1,3 +1,5 @@
+from typing import List
+
 class Solution:
     def minPartitions(self, n: str) -> int:
         print(int(n) - 1*10**(len(str(n))-1))
