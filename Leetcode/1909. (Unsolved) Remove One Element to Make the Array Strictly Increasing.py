@@ -2,25 +2,29 @@ from typing import List
 
 
 class Solution:
+
+
     def canBeIncreasing(self, nums: List[int]) -> bool:
-        count = 0
-        at = []
-        for i in range(len(nums)-1):
-            if nums[i+1] <= nums[i]:
-                count += 1
-                at.append(i)
-        if count == 0:
-            return True
-        elif count > 1:
-            return False
-        else:
-            at = at[0]
-            if at == 0:
+        def isIncreasing(arr):
+            if len(arr) == 0:
                 return True
-            if at == len(nums) -1:
+            if len(arr) == 1:
                 return True
             else:
-                return bool(max(nums[at-1] < nums[at+1], nums[at] < nums[at+2]))
+                for i in range(len(arr)-1):
+                    if arr[i] >= arr[i+1]:
+                        return False
+                return True
+        
+        for i in range(len(nums)-1):
+            if nums[i] >= nums[i+1]:
+                if i == 0:
+                    return isIncreasing(nums[1:])
+                if i == (len(nums)-1):
+                    return isIncreasing(nums[:-1]) or isIncreasing(nums[:-2] + [nums[-1]])
+                else:
+                    return isIncreasing(nums[:i] + nums[i+1:]), isIncreasing(nums[:i-1] + nums[i:])
+
 
 
 
