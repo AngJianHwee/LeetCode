@@ -9,9 +9,15 @@ class Solution:
                 dic[w] += 1
             else:
                 dic[w] = 1
+        if len(dic.values()) == 1:
+            return True
+        if (max(dic.values()) == min(dic.values())) and (max(dic.values()) == 1):
+            return True
         if len([x for x in dic.values() if x == 1]) == 1:
             return True
+        
         x = (sum(dic.values())-1)/len(dic.keys())
+        
         return abs(x - int(x)) < 1e-5
 
 
@@ -22,6 +28,7 @@ print(s.equalFrequency(word = "aazz"))
 print(s.equalFrequency(word = "bac"))
 print(s.equalFrequency(word = "ddaccb"))
 print(s.equalFrequency(word = "bac"))
+print(s.equalFrequency(word = "babbdd"))
 
 
 
