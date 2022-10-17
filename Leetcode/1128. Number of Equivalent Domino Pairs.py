@@ -67,7 +67,6 @@ class Solution:
         return count
 
 
-####
 s = Solution()
 print(s.numEquivDominoPairs(dominoes=[[1, 2], [2, 1], [3, 4], [5, 6]]))
 print(s.numEquivDominoPairs(dominoes=[[1, 2], [1, 2], [1, 1], [1, 2], [2, 2]]))
