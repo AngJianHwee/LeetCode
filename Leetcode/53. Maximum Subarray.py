@@ -5,3 +5,4 @@ class Solution:
             kadane.append(max(kadane[-1],0)+ nums[i])
         return max(kadane)
         
+        
