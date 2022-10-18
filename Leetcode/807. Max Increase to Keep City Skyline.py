@@ -6,7 +6,7 @@ class Solution:
         t = 0
         for i in range(len(grid)):
              for j in range(len(grid[0])):
-                    if (grid[i][j] == mr[i]) or (grid[i][j] == mr[j]):
+                    if (grid[i][j] == mr[i]) or (grid[i][j] == mc[j]):
                         continue
-                    t += abs(min(mr[i],mr[j]) - grid[i][j])
-        print(t)
+                    t += abs(grid[i][j] - min(mr[i],mc[j]))
+        return t
