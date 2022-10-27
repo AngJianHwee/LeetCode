@@ -1,0 +1,1 @@
+print(f"{sum(list(map(int, input().split()))):,d}")
