@@ -1,9 +1,10 @@
 import itertools
-n = 4
+n = 3
 x = [1 for _ in range(2**n)]
 arr = [x]
 cur = [1 for _ in range(2**n)]
-while len(arr) < 2**n:
+# while len(arr) < 2**n:
+for _ in range(10):
 	for z in set(itertools.permutations(cur,len(cur))):
 		status = 1
 		for x in arr:
@@ -13,11 +14,11 @@ while len(arr) < 2**n:
 		if status == 1:
 			arr.append(z)
 		
-		if len(arr) == 2**n:
-			break
+		# if len(arr) == 2**n:
+			# break
 	cur.pop(0)
 	cur.append(-1)
-print(arr)
+print(len(arr))
 
 
 
